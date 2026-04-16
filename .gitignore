@@ -1,0 +1,33 @@
+# Model checkpoints and weights
+output_*/
+Qwen3-TTS-12Hz-1.7B-Base/
+Qwen3-TTS-Tokenizer-12Hz/
+
+# Training data and audio
+datasets_24k/
+ref_audio/
+validation_outputs/
+*.wav
+
+# JSONL data files
+train_*.jsonl
+dev_*.jsonl
+
+# Logs
+logs/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.eggs/
+
+# Generated plots and images
+*.png
+
+# Misc
+.DS_Store
+*.swp
+*.swo
+*~

@@ -1,0 +1,15 @@
+--- a/qwen_tts/core/models/modeling_qwen3_tts.py
++++ b/qwen_tts/core/models/modeling_qwen3_tts.py
+@@ -1239,7 +1239,11 @@
+ 
+         loss = None
+         if labels is not None:
+-            loss = self.loss_function(logits=logits, labels=labels, vocab_size=self.config.vocab_size, **kwargs)
++            import torch.nn.functional as _F
++            loss = _F.cross_entropy(
++                logits.reshape(-1, self.config.vocab_size),
++                labels.reshape(-1),
++                ignore_index=-100,
++            )
+ 
+         return Qwen3TTSTalkerCodePredictorOutputWithPast(
