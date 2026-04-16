@@ -14,8 +14,9 @@ fm.fontManager.addfont(CJK_FONT_PATH)
 matplotlib.rcParams["font.family"] = "Noto Sans CJK JP"
 matplotlib.rcParams["axes.unicode_minus"] = False
 
-LOG_DIR = "/root/workspace/Qwen3-TTS/finetuning/logs"
-OUT_PATH = "/root/workspace/Qwen3-TTS/finetuning/logs/training_loss_curves.png"
+_SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+LOG_DIR = os.path.join(_SCRIPT_DIR, "logs")
+OUT_PATH = os.path.join(LOG_DIR, "training_loss_curves.png")
 
 SPEAKERS = ["MT", "安吉拉", "汉克狗", "狗狗本"]
 PATTERN = re.compile(r"Epoch (\d+) \| Step (\d+) \| Loss: ([\d.]+)")

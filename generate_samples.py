@@ -10,7 +10,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 
 from qwen_tts import Qwen3TTSModel
 
-BASE_DIR = "/root/workspace/Qwen3-TTS/finetuning"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 OUT_DIR = os.path.join(BASE_DIR, "validation_outputs")
 DEVICE = "cuda:0"
 BEST_EPOCH = 9

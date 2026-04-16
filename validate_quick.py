@@ -7,7 +7,7 @@ import torch
 import soundfile as sf
 from qwen_tts import Qwen3TTSModel
 
-BASE_DIR = "/root/workspace/Qwen3-TTS/finetuning"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 OUT_DIR = os.path.join(BASE_DIR, "validation_outputs")
 DEVICE = "cuda:0"
 TEXT = "今天天气真不错，我们一起去公园散步吧。"

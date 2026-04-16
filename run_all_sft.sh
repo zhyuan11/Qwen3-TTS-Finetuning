@@ -4,9 +4,9 @@ set -e
 export NUMBA_CACHE_DIR=/tmp/numba_cache
 export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
 
-CD_DIR="/root/workspace/Qwen3-TTS/finetuning"
-CONDA_ENV="qwen3-tts"
-MODEL_PATH="/root/workspace/Qwen3-TTS/Qwen3-TTS-12Hz-1.7B-Base"
+CD_DIR="$(cd "$(dirname "$0")" && pwd)"
+CONDA_ENV="${CONDA_ENV:-qwen3-tts}"
+MODEL_PATH="${QWEN3_TTS_BASE_MODEL:-Qwen/Qwen3-TTS-12Hz-1.7B-Base}"
 LOG_DIR="${CD_DIR}/logs"
 BATCH_SIZE=2
 LR=2e-6

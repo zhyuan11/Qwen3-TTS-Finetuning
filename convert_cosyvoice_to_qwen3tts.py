@@ -66,10 +66,10 @@ def select_ref_audio(entries: list[dict]) -> dict | None:
 
 def main():
     parser = argparse.ArgumentParser(description="Convert CosyVoice dataset to Qwen3-TTS JSONL format")
-    parser.add_argument("--src_dir", type=str, default="/root/workspace/CosyVoice/datasets",
+    parser.add_argument("--src_dir", type=str, required=True,
                         help="Root of the CosyVoice dataset (contains train/ and dev/)")
     parser.add_argument("--output_dir", type=str,
-                        default="/root/workspace/Qwen3-TTS/finetuning",
+                        default=os.path.dirname(os.path.abspath(__file__)),
                         help="Output directory for resampled audio and JSONL files")
     args = parser.parse_args()
 

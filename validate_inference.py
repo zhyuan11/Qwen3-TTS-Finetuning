@@ -22,11 +22,12 @@ TEST_EPOCHS = [0, 4, 9]
 
 def main():
     parser = argparse.ArgumentParser()
+    _script_dir = os.path.dirname(os.path.abspath(__file__))
     parser.add_argument("--base_dir", type=str,
-                        default="/root/workspace/Qwen3-TTS/finetuning")
+                        default=_script_dir)
     parser.add_argument("--device", type=str, default="cuda:0")
     parser.add_argument("--output_dir", type=str,
-                        default="/root/workspace/Qwen3-TTS/finetuning/validation_outputs")
+                        default=os.path.join(_script_dir, "validation_outputs"))
     args = parser.parse_args()
 
     os.makedirs(args.output_dir, exist_ok=True)

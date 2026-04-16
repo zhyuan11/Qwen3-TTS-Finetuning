@@ -7,11 +7,11 @@ import torch
 import soundfile as sf
 from qwen_tts import Qwen3TTSModel
 
-BASE_DIR = "/root/workspace/Qwen3-TTS/finetuning"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 OUT_DIR = os.path.join(BASE_DIR, "validation_outputs")
 DEVICE = "cuda:0"
 
-BASE_MODEL_PATH = "/root/workspace/Qwen3-TTS/Qwen3-TTS-12Hz-1.7B-Base"
+BASE_MODEL_PATH = os.environ.get("QWEN3_TTS_BASE_MODEL", "Qwen/Qwen3-TTS-12Hz-1.7B-Base")
 FT_CKPT = os.path.join(BASE_DIR, "output_安吉拉", "checkpoint-epoch-9")
 REF_AUDIO = os.path.join(BASE_DIR, "datasets_24k/train/安吉拉/冷静/安吉拉_冷静_120.wav")
 
